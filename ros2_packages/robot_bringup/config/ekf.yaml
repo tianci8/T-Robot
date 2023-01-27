@@ -8,7 +8,7 @@ ekf_filter_node:
  
         map_frame: map             
         odom_frame: odom            
-        base_link_frame: base_link 
+        base_link_frame: base_footprint
         world_frame: odom 
 
         #x     , y     , z,

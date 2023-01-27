@@ -1,14 +1,3 @@
---[[
-Author: Tianci Zhang
-Email: tianci_zhang@tju.edu.cn
-Date: 2023-01-12 20:16:21
-LastEditors: Tianci Zhang
-LastEditTime: 2023-01-12 20:16:35
-FilePath: \unit_test_micro_ros_without_reconnect_finalc:\Users\97930\AppData\Roaming\MobaXterm\slash\RemoteFiles\983198_6_6\trobot_2D.lua
-Description: 
-
-Copyright (c) 2023 by tianci_zhang@tju.edu.cn, All Rights Reserved. 
---]]
 include "map_builder.lua"
 include "trajectory_builder.lua"
 

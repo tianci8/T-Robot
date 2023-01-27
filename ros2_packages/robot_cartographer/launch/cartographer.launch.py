@@ -1,3 +1,14 @@
+'''
+Author: Tianci Zhang
+Email: tianci_zhang@tju.edu.cn
+Date: 2023-01-27 21:20:51
+LastEditors: Tianci Zhang
+LastEditTime: 2023-01-27 21:23:04
+FilePath: \T-Robot\ros2_packages\robot_cartographer\launch\cartographer.launch.py
+Description: 
+
+Copyright (c) 2023 by tianci_zhang@tju.edu.cn, All Rights Reserved. 
+'''
 
 import os
 from launch import LaunchDescription
@@ -7,25 +18,19 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    # 定位到功能包的地址
-    pkg_share = FindPackageShare(package='tRobot_cartographer').find('tRobot_cartographer')
-    
-    #=====================运行节点需要的配置=======================================================================
-    # 是否使用仿真时间，我们不用gazebo，这里设置成false
-    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    # 地图的分辨率
-    resolution = LaunchConfiguration('resolution', default='0.05')
-    # 地图的发布周期
-    publish_period_sec = LaunchConfiguration('publish_period_sec', default='1.0')
-    # 配置文件夹路径
-    configuration_directory = LaunchConfiguration('configuration_directory',default= os.path.join(pkg_share, 'config') )
-    # 配置文件
-    configuration_basename = LaunchConfiguration('configuration_basename', default='trobot_2D.lua')
-    #rviz_config_dir = os.path.join(pkg_share, 'config')+"/cartographer.rviz"
-    #print(f"rviz config in {rviz_config_dir}")
 
-    
-    #=====================声明三个节点，cartographer/occupancy_grid_node/rviz_node=================================
+    pkg_share = FindPackageShare(package='robot_cartographer').find('robot_cartographer')
+
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+
+    resolution = LaunchConfiguration('resolution', default='0.05')
+
+    publish_period_sec = LaunchConfiguration('publish_period_sec', default='1.0')
+
+    configuration_directory = LaunchConfiguration('configuration_directory',default= os.path.join(pkg_share, 'config') )
+
+    configuration_basename = LaunchConfiguration('configuration_basename', default='trobot_2D.lua')
+
     cartographer_node = Node(
         package='cartographer_ros',
         executable='cartographer_node',
@@ -51,7 +56,7 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}],
         output='screen')
 
-    #===============================================定义启动文件========================================================
+    #===============================================???????????========================================================
     ld = LaunchDescription()
     ld.add_action(cartographer_node)
     ld.add_action(occupancy_grid_node)

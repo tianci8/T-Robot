@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(TRobot_bringup)
+project(robot_description)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -17,12 +17,16 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
+find_package(urdf REQUIRED)
+# uncomment the following section in order to fill in
+# further dependencies manually.
+# find_package(<dependency> REQUIRED)
 
 install(
-  DIRECTORY launch
+  DIRECTORY launch urdf
   DESTINATION share/${PROJECT_NAME}
 )
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

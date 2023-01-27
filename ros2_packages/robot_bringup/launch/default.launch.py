@@ -1,10 +1,10 @@
 '''
 Author: Tianci Zhang
 Email: tianci_zhang@tju.edu.cn
-Date: 2023-01-27 21:02:45
+Date: 2023-01-27 21:20:51
 LastEditors: Tianci Zhang
-LastEditTime: 2023-01-27 21:03:08
-FilePath: \ros2_packages\TRobot_bringup\launch\default.launch.py
+LastEditTime: 2023-01-27 21:21:41
+FilePath: \T-Robot\ros2_packages\robot_bringup\launch\default.launch.py
 Description: 
 
 Copyright (c) 2023 by tianci_zhang@tju.edu.cn, All Rights Reserved. 
@@ -21,35 +21,35 @@ from launch.conditions import IfCondition
 
 
 def generate_launch_description():
-    # launch传感器，若有其他传感器，可在自行添加
+    # 激光雷达
     lidar_launch_path = PathJoinSubstitution(
         [FindPackageShare('ld14'), 'launch', 'ld14.launch.py']
     )
     
     #launch rviz2
     description_launch_path = PathJoinSubstitution(
-        [FindPackageShare('TRobot_description'), 'launch', 'description.launch.py']
+        [FindPackageShare('robot_description'), 'launch', 'description.launch.py']
     )
 
     ekf_config_path = PathJoinSubstitution(
-        [FindPackageShare("TRobot_bringup"), "config", "ekf.yaml"]
+        [FindPackageShare("robot_bringup"), "config", "ekf.yaml"]
     )
     return LaunchDescription([
-        # 设置micro_ros串口
+        # micro_ros
         DeclareLaunchArgument(
             name='micro_ros_serial_port', 
             default_value='/dev/ttyUSB0',
             description='micro_ros Serial Port'
         ),
 
-        # 设置串口通讯波特率
+        # 设置波特率
         DeclareLaunchArgument(
             name='micro_ros_baudrate', 
             default_value='460800',
             description='baudrate'
         ),
 
-        # 启动micro_ros_agent
+        # micro_ros_agent
         Node(
             package='micro_ros_agent',
             executable='micro_ros_agent',

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(tRobot_cartographer)
+project(robot_cartographer)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -21,6 +21,11 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+install(
+  DIRECTORY config launch rviz
+  DESTINATION share/${PROJECT_NAME}
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
@@ -31,10 +36,5 @@ if(BUILD_TESTING)
   #set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
-
-install(
-  DIRECTORY config launch rviz
-  DESTINATION share/${PROJECT_NAME}
-)
 
 ament_package()
