@@ -1,6 +1,8 @@
 # T-Robot
 
-<img src="https://s2.loli.net/2023/01/27/2GZabjpWzDtgSEm.jpg" alt="T-Robot1" style="zoom:50%;" /><img src="C:\Users\97930\Desktop\8iitj-hmr45.compressed.compressed.gif" alt="8iitj-hmr45.compressed.compressed" style="zoom: 67%;" />
+<img src="https://s2.loli.net/2023/01/27/2GZabjpWzDtgSEm.jpg" alt="T-Robot1" style="zoom:50%;" />
+
+![image](https://github.com/z2010012286/T-Robot/blob/main/images/mapping.gif)
 
 - T-Robot是一个DIY的移动机器人
 
