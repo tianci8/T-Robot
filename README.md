@@ -1,6 +1,6 @@
 # T-Robot
 
-<img src="https://s2.loli.net/2023/01/27/wqSCL1pVbQ3HMnU.jpg" alt="T-Robot1" style="zoom: 50%;" />
+<img src="https://s2.loli.net/2023/01/27/2GZabjpWzDtgSEm.jpg" alt="T-Robot1" style="zoom:50%;" />
 
 - T-Robot是一个DIY的移动机器人
 
