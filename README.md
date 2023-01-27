@@ -1,6 +1,6 @@
 # T-Robot
 
-<img src="https://s2.loli.net/2023/01/27/YHeqvjRr5i8zNOW.jpg" alt="T-Robot1" style="zoom:25%;" />
+<img src="https://s2.loli.net/2023/01/27/wqSCL1pVbQ3HMnU.jpg" alt="T-Robot1" style="zoom: 50%;" />
 
 - T-Robot是一个DIY的移动机器人
 
@@ -80,7 +80,7 @@
   ​    &odom_publisher,
   ​    &node,
   ​    ROSIDL_GET_MSG_TYPE_SUPPORT(nav_msgs, msg, Odometry),
-  ​    "odom/unfiltered"));
+  ​    "odom"));
   ```
 
 - 使用wifi与上位机进行通讯；
