@@ -1,6 +1,6 @@
 # T-Robot
 
-<img src="https://s2.loli.net/2023/01/27/2GZabjpWzDtgSEm.jpg" alt="T-Robot1" style="zoom:50%;" />
+<img src="https://s2.loli.net/2023/01/27/2GZabjpWzDtgSEm.jpg" alt="T-Robot1" style="zoom:50%;" /><img src="C:\Users\97930\Desktop\8iitj-hmr45.compressed.compressed.gif" alt="8iitj-hmr45.compressed.compressed" style="zoom: 67%;" />
 
 - T-Robot是一个DIY的移动机器人
 
@@ -155,7 +155,7 @@ void attachFullQuad(int aPintNumber, int bPinNumber);  //4倍
   - 依赖[MPU9250库](https://github.com/hideakitai/MPU9250.git)，该库可通过platformio.ini文件进行自动安装，也可以手动下载添加；
   - 对`imu_interface.h`中的4个虚函数进行了实现；
 
-## 2.1.4 lib/kinematics
+### 	2.1.4 lib/kinematics
 
 c++封装的适用于求解小车底盘正逆运动学的库。适用于两轮差分、阿克曼、麦轮等。该库原地址：[kinematics](https://github.com/linorobot/linorobot2_hardware/tree/galactic/firmware/lib/kinematics)
 
@@ -173,7 +173,7 @@ rpm getRPM(float linear_x, float linear_y, float angular_z);
 velocities getVelocities(int rpm1, int rpm2, int rpm3, int rpm4);
 ```
 
-### 2.1.5 lib/motor
+### 	2.1.5 lib/motor
 
 `motor_interface.h`抽象了电机的各个功能，如正转、反转、停机等；
 
@@ -181,7 +181,7 @@ velocities getVelocities(int rpm1, int rpm2, int rpm3, int rpm4);
 
 `pwm_offset`是为了解决一些电机在低占空比pwm驱动下，电机不转动的问题；
 
-### 2.1.6 lib/odemetry
+### 	2.1.6 lib/odemetry
 
 定义了里程计`nav_msgs/msg/odometry`，用于发布`odometry message`；
 
@@ -200,11 +200,11 @@ velocities getVelocities(int rpm1, int rpm2, int rpm3, int rpm4);
 void update(float vel_dt, float linear_vel_x, float linear_vel_y, float angular_vel_z);
 ```
 
-### 2.1.7 lib/pid
+### 	2.1.7 lib/pid
 
 顾名思义，电机的PID控制，不多解释了，看代码~
 
-### 2.1.8 lib/micro_ros_arduino
+### 	2.1.8 lib/micro_ros_arduino
 
 基于官方的[micro_ros_arduino#v2.0.5foxy](https://github.com/micro-ROS/micro_ros_arduino#v2.0.5-foxy)，对其进行了必要修改，并进行了rebuild：
 
@@ -212,7 +212,7 @@ void update(float vel_dt, float linear_vel_x, float linear_vel_y, float angular_
 - 修改`RMW_UXRCE_MAX_HISTORY=2`，减少RAM使用，避免内存溢出；
 - 具体rebuild步骤可参考：https://github.com/micro-ROS/micro_ros_arduino/issues/1221#issuecomment-1329923473
 
-### 2.1.9  src/main.cpp
+### 	2.1.9  src/main.cpp
 
 - 初始化编码器、pid控制、电机等
 - 创建2个publisher: odom和imu
@@ -227,7 +227,26 @@ void update(float vel_dt, float linear_vel_x, float linear_vel_y, float angular_
 
 ## 3.2 robot_bringup
 
+- 放置robot开机启动的程序(目前只有一个default.launch.py)
+
+### 	3.2.1 default.launch.py
+
+- 依次启动激光雷达、robot_description、micro_agent等等
+
 ## 3.3 robot_description
 
+- 主要放置机器人描述文件，即urdf
+
 ## 3.4 robot_cartographer
+
+- 利用cartoprapher进行建图，具体信息自行学习cartographer。
+
+# 4 已知问题
+
+- IMU坐标系未与ROS默认的坐标系对齐，需要重新对齐，后续有进度再更新。
+- 因为IMU坐标系问题，采用EKF融合IMU和Odometry会出错，故直接使用编码器直出Odom。
+- Odom的更新频率目前维持在40Hz，再高无法达到，似乎串口波特率到极限了；可尝试wifi通讯。
+- 未添加camera驱动，因为后续有使用camera进行再次开发的想法，等待后续更新。
+
+
 
