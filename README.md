@@ -2,8 +2,6 @@
 
 <img src="https://s2.loli.net/2023/01/27/2GZabjpWzDtgSEm.jpg" alt="T-Robot1" style="zoom:50%;" />
 
-![image](https://github.com/z2010012286/T-Robot/blob/main/images/mapping.gif)
-
 - T-Robot是一个DIY的移动机器人
 
 - 全面拥抱ROS2生态，可实现2D激光雷达地图重建和自主导航
