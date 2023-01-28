@@ -1,8 +1,6 @@
 # T-Robot
 
-B站链接：
-
-[T-Robot]: https://www.bilibili.com/video/BV1px4y177zj/?vd_source=fc4d109b7a90269c1045aa2860dd4925	"T-Robot v0.1版本发布！开源全向移动机器人(Based on Micro-ROS)"
+B站链接：https://www.bilibili.com/video/BV1px4y177zj/?vd_source=fc4d109b7a90269c1045aa2860dd4925
 
 <img src="https://s2.loli.net/2023/01/27/2GZabjpWzDtgSEm.jpg" alt="T-Robot1" style="zoom:50%;" />
 
