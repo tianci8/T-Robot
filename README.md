@@ -1,5 +1,9 @@
 # T-Robot
 
+B站链接：
+
+[T-Robot]: https://www.bilibili.com/video/BV1px4y177zj/?vd_source=fc4d109b7a90269c1045aa2860dd4925	"T-Robot v0.1版本发布！开源全向移动机器人(Based on Micro-ROS)"
+
 <img src="https://s2.loli.net/2023/01/27/2GZabjpWzDtgSEm.jpg" alt="T-Robot1" style="zoom:50%;" />
 
 - T-Robot是一个DIY的移动机器人
@@ -13,6 +17,8 @@
 - 上层应用ROS2进行各个功能模块的快速开发
 
 - 本项目借鉴和学习了以下仓库：[linorobot2](https://github.com/linorobot/linorobot2) [fishbot](https://github.com/fishros/fishbot) [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3)
+
+- **注意：仅在ros2-foxy下进行了测试**
 
 # 0 仓库资料说明
 
