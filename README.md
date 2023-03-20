@@ -240,6 +240,7 @@ void update(float vel_dt, float linear_vel_x, float linear_vel_y, float angular_
 ## 3.3 robot_description
 
 - 主要放置机器人描述文件，即urdf
+- 加载stl文件报错时，可参考[fix malformed stl](https://gist.github.com/awesomebytes/2595b1dc41831c804a4f)
 
 ## 3.4 robot_cartographer
 
