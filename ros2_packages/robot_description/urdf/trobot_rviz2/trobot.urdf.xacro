@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="trobot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find robot_description)/urdf/trobot_rviz2/trobot_properties.urdf.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/trobot_rviz2/trobot_base.urdf.xacro" />
+  <!-- <xacro:include filename="$(find robot_description)/urdf/mecanum_wheel.urdf.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/sensors/imu.urdf.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/sensors/generic_laser.urdf.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/sensors/depth_sensor.urdf.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/controllers/omni_drive.urdf.xacro" /> -->
+
+  <xacro:base 
+    length="${base_length}" 
+    width="${base_width}" 
+    height="${base_height}" 
+/>
+
+  <!-- <xacro:imu/>
+  
+  <xacro:generic_laser>
+    <xacro:insert_block name="laser_pose" />
+  </xacro:generic_laser>
+  
+  <xacro:depth_sensor>
+    <xacro:insert_block name="depth_sensor_pose" />
+  </xacro:depth_sensor>
+
+  <xacro:omni_drive_controller/> -->
+</robot>
